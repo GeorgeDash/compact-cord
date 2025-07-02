@@ -5,3 +5,8 @@
  * @version 0.0.1
  */
 
+@import url("https://georgedash.github.io/compact-cord/import.css");
+
+body {
+    --guild-list: collapse;
+}

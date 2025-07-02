@@ -5,14 +5,11 @@ body {
 
 
 /* Creating properties for each customization */
-/* ROOT */
 @property --transition {
     syntax: "*";
     inherits: false;
     initial-value: "all 0.2s ease-in-out";
 }
-
-/* BODY */
 @property --guild-list { 
     syntax: "default | collapse";
     inherits: false;

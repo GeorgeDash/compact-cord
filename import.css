@@ -9,6 +9,7 @@ body {
 @property --transition {
     syntax: "*";
     inherits: false;
+    initial-value: "all 0.2s ease-in-out";
 }
 
 /* BODY */

@@ -7,6 +7,10 @@
 
 @import url("https://georgedash.github.io/compact-cord/import.css");
 
+:root {
+    --transition: all 0.2 ease-in-out; /* Change it to your liking */
+}
+
 body {
     --guild-list: collapse;
 }

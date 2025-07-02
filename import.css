@@ -1,7 +1,4 @@
 /* Assigning container name to body for easier customization */
-root {
-    container-name: root;
-}
 body {
     container-name: body;
 }
@@ -12,7 +9,6 @@ body {
 @property --transition {
     syntax: "*";
     inherits: false;
-    initial-value: all 0.2 ease-in-out;
 }
 
 /* BODY */
@@ -49,6 +45,25 @@ body {
         }
         .bannerImage_f37cb1, .bannerImg_f37cb1 { /* Fix banner width issue */
             width: 100%;
+        }
+    }
+}
+
+@container body style(--separate-guild-list: separate) {
+    .visual-refresh {
+        .guilds_c48ade {
+            height: 100%;
+            z-index: 10;
+            position: absolute;
+            transform: translateX(calc(var(--custom-guild-list-width) * -0.9));
+            transition: var(--transition);
+
+            &:hover {
+                transform: translateX(0);
+            }
+        }
+        .sidebarList_c48ade {
+            width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width));
         }
     }
 }

@@ -9,7 +9,6 @@
 
 
 body {
-    --transition: "";
-
+    --transition: ;
     --guild-list: collapse;
 }

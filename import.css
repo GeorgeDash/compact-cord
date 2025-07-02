@@ -8,7 +8,7 @@ body {
 @property --transition {
     syntax: "*";
     inherits: false;
-    initial-value: "all 0.2s ease-in-out";
+    initial-value: 0.2s ease-in-out;
 }
 @property --guild-list { 
     syntax: "default | collapse";
@@ -28,7 +28,7 @@ body {
         .guilds_c48ade {
             z-index: 1;
             right: calc(var(--custom-guild-list-width) - 0.1px);
-            transition: var(--transition);
+            transition: all var(--transition);
 
             &:hover {
                 right: 0;

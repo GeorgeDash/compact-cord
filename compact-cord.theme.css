@@ -11,7 +11,15 @@
 body {
     --transition: 0.2s ease-in-out;
 
+
     --guild-list: default;
     --separate-guild-list: off;
+
     --sidebar-list: default;
+    --separate-sidebar-list: off;
+
+    --active-now: default;
+    --separate-active-now: off;
+
+    --user-area: default;
 }

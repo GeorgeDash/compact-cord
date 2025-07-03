@@ -8,7 +8,6 @@ body {
 @property --transition {
     syntax: "*";
     inherits: false;
-    initial-value: 0.2s ease-in-out;
 }
 @property --guild-list { 
     syntax: "default | collapse";
@@ -35,7 +34,7 @@ body {
             }
         }
         .sidebar_c48ade .sidebarList_c48ade {
-            transition: var(--transition);
+            transition: all var(--transition);
         }
         .sidebar_c48ade:has(.guilds_c48ade:not(:hover)) .sidebarList_c48ade {
             width: var(--custom-guild-sidebar-width);
@@ -45,23 +44,67 @@ body {
             width: 100%;
         }
     }
-}
 
-@container body style(--separate-guild-list: separate) {
-    .visual-refresh {
-        .guilds_c48ade {
-            height: 100%;
-            z-index: 10;
-            position: absolute;
-            transform: translateX(calc(var(--custom-guild-list-width) * -0.9));
-            transition: var(--transition);
+    @container body style(--separate-guild-list: separate) {
+        .visual-refresh {
+            .guilds_c48ade {
+                height: 100%;
+                position: absolute;
+                left: calc(var(--custom-guild-list-width) * -0.9);
+                transition: all var(--transition);
 
-            &:hover {
-                transform: translateX(0);
+                &:hover {
+                    left: 0;
+                }
+            }
+            .sidebarList_c48ade {
+                width: var(--custom-guild-sidebar-width); 
+                margin-left: 0 !important;
             }
         }
+    }
+}
+
+@container body style(--sidebar-list: collapse) {
+    .visual-refresh {
+        .panels_c48ade {
+            width: calc(var(--custom-rtc-account-height) + var(--custom-panels-spacing) * 1.5);        
+            overflow: hidden;
+            transition: all var(--transition);
+            position: fixed;
+            left: var(--custom-panels-spacing);
+
+            .avatarWrapper__37e49 {
+                z-index: 10;
+            }
+
+            .buttons__37e49 > * {
+                display: none;
+            }
+
+            &:hover {
+                width: calc(var(--custom-guild-sidebar-width) - var(--custom-panels-spacing) * 2);
+
+                .buttons__37e49 > * {
+                    display: flex;
+                }
+            }
+        }
+
         .sidebarList_c48ade {
-            width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width));
+            height: 100%;
+            border-left: none;
+            margin-right: calc((var(--custom-guild-sidebar-width) * -0.85));
+            transition: all var(--transition);
+
+            &:hover {
+                border-left: 1px solid var(--app-border-frame);
+                margin-right: 0;
+            }
+        }
+
+        .sidebarResizeHandle_c48ade {
+            display: none;
         }
     }
 }

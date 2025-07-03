@@ -9,6 +9,9 @@
 
 
 body {
-    --transition: ;
-    --guild-list: collapse;
+    --transition: 0.2s ease-in-out;
+
+    --guild-list: default;
+    --separate-guild-list: off;
+    --sidebar-list: default;
 }

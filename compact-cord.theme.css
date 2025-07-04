@@ -22,7 +22,8 @@ body {
     --separate-sidebar-list: off;
 
     /* Sidebar (guild list + sidebar list) */
-    --sidebar: default;
+    --sidebar: default; /* NOTE: You must make both the guild and the sidebar lists NOT collapsible
+                           (otherwise, it won't work).
 
     /* Active Now section */
     --active-now: collapse;

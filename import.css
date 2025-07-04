@@ -2,6 +2,7 @@ body {
     container-name: body;
 }
 
+/* Fix user area panel being collapsed with sidebar */
 .visual-refresh {
     .panels_c48ade {
         z-index: 3;

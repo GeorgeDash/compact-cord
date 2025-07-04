@@ -137,6 +137,7 @@ and style(--sidebar-list: default) {
                 z-index: 1;
                 position: fixed !important;
                 left: calc((var(--custom-guild-sidebar-width) + var(--custom-guild-list-width)) * -1) !important;
+                transition: left var(--transition-duration) var(--transition-easing) !important;
 
                 &:hover,
                 .guilds_c48ade:hover + & {
@@ -150,6 +151,7 @@ and style(--sidebar-list: default) {
 @container body style(--active-now: collapse) {
     .visual-refresh {
         .nowPlayingColumn__133bf {
+            max-width: 360px !important;
             margin-right: -359px !important;
             transition: margin-right var(--transition-duration) var(--transition-easing) !important;
 

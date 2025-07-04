@@ -9,17 +9,32 @@
 
 
 body {
-    --transition: 0.2s ease-in-out;
+    /* Transition customization */
+    --transition-duration: 0.2s;
+    --transition-easing: ease-in-out; /* You can also put bezier-function(), if you prefer.
 
+    /* Guild list (server list) */
+    --guild-list: default; /* Values: default/collapse */
+    --separate-guild-list: off; /* Values: off/separate */    /* Same applies to the elements below. */
 
-    --guild-list: default;
-    --separate-guild-list: off;
-
+    /* Sidebar list (DMs list) */
     --sidebar-list: default;
     --separate-sidebar-list: off;
 
-    --active-now: default;
-    --separate-active-now: off;
+    /* Sidebar (guild list + sidebar list) */
+    --sidebar: default;
 
-    --user-area: default;
+    /* Active Now section */
+    --active-now: collapse;
+    --separate-active-now: separate;
+
+    /* Member list section */
+    --member-list: collapse;
+    --separate-member-list: separate;
+
+    /* User Area panel */
+    --user-area: collapse;
+    /* Uncomment both values if you don't like the spacing of the panel (6px by default). */
+    /* --ua-left-offset: 9px; */
+    /* --ua-bottom-offset: 9px;  */
 }

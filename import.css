@@ -5,7 +5,6 @@ body {
 /* Fix user area panel being collapsed with sidebar */
 .visual-refresh {
     .panels_c48ade {
-        z-index: 3;
         width: calc(var(--custom-guild-sidebar-width) - var(--custom-user-area-spacing, var(--custom-panels-spacing)) * 2) !important;
         position: fixed !important;
         bottom: var(--ua-bottom-offset, var(--custom-panels-spacing))  !important;
@@ -55,7 +54,7 @@ and style(--sidebar-list: default) {
 @container body style(--guild-list: collapse) {
     .visual-refresh {
         .guilds_c48ade {
-            z-index: 1;
+            z-index: 3;
             right: calc(var(--custom-guild-list-width) - 0.1px) !important;
             transition: right var(--transition-duration) var(--transition-easing);
 
@@ -69,7 +68,7 @@ and style(--sidebar-list: default) {
                 width var(--transition-duration) var(--transition-easing),
                 margin-left var(--transition-duration) var(--transition-easing);
             
-            .guilds_c48ade:not(:hover) ~ & {
+            .guilds_c48ade:not(:hover) + & {
                 width: var(--custom-guild-sidebar-width) !important;
                 margin-left: calc(var(--custom-guild-list-width) * -1) !important;
             }
@@ -87,6 +86,10 @@ and style(--sidebar-list: default) {
                 position: absolute !important;
                 left: calc(var(--custom-guild-list-width) * -0.9) !important;
                 transition: left var(--transition-duration) var(--transition-easing);
+
+                &:not(:hover) + .sidebarList_c48ade {
+                    margin-left: 0 !important;
+                }
 
                 &:hover {
                     left: 0 !important;
@@ -117,7 +120,7 @@ and style(--sidebar-list: default) {
                 margin-right var(--transition-duration) var(--transition-easing);
 
             &:hover,
-            .guilds_c48ade:hover ~ & {
+            .guilds_c48ade:hover + & {
                 border-left: 1px solid var(--app-border-frame);
                 margin-right: 0 !important;
             }
@@ -136,7 +139,7 @@ and style(--sidebar-list: default) {
                 left: calc((var(--custom-guild-sidebar-width) + var(--custom-guild-list-width)) * -1) !important;
 
                 &:hover,
-                .guilds_c48ade:hover ~ & {
+                .guilds_c48ade:hover + & {
                     left: calc(var(--custom-guild-list-width) - 1px) !important;
                 }
             }
